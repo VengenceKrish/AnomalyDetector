@@ -1,0 +1,111 @@
+# Network Intrusion Detection System
+
+A machine learning-based intrusion detection system that identifies malicious network traffic using the Random Forest algorithm.
+
+## Overview
+
+This project uses supervised machine learning to classify network connections as either normal traffic or cyber attacks. Trained on the NSL-KDD dataset, the model achieves ~99% accuracy in detecting various types of network intrusions.
+
+## Features
+
+- **Binary Classification**: Distinguishes between normal and malicious network traffic
+- **Random Forest Algorithm**: Uses ensemble learning with 50 decision trees
+- **High Accuracy**: Achieves 98-99% accuracy on test data
+- **Multi-Attack Detection**: Trained to recognize 38+ different attack types including:
+  - DoS attacks (neptune, smurf, back)
+  - Probe attacks (portsweep, ipsweep, nmap)
+  - Privilege escalation (buffer_overflow, rootkit)
+  - And more
+
+## Dataset
+
+Uses the **NSL-KDD dataset**, an improved version of the KDD Cup '99 dataset:
+- 22,544 training samples
+- 40+ network traffic features (duration, protocol, bytes transferred, error rates, etc.)
+- Balanced representation of normal and attack traffic
+
+## Technologies
+
+- **Python 3.x**
+- **pandas & numpy**: Data manipulation
+- **scikit-learn**: Machine learning algorithms and preprocessing
+- **Jupyter Notebook**: Development and visualization
+
+## Installation
+```bash
+# Clone the repository
+git clone https://github.com/VengenceKrish/AnomalyDetector.git
+cd AnomalyDetector
+
+# Install dependencies
+pip install pandas numpy scikit-learn jupyter
+```
+
+## Usage
+
+1. Download the NSL-KDD dataset and place in `Data/` folder
+2. Open `main.ipynb` in Jupyter Notebook or VS Code
+3. Run all cells to train and evaluate the model
+
+## Results
+
+- **Accuracy**: ~98.7%
+- **Precision**: 98-99% for both normal and attack traffic
+- **Recall**: 99% for both classes
+- **F1-Score**: 98-99%
+
+## Project Structure
+```
+AnomalyDetector/
+├── Data/
+│   └── KDDTrain+.txt
+├── main.ipynb
+└── README.md
+```
+
+## Future Improvements
+
+- [ ] Test on additional datasets (CICIDS2017, UNSW-NB15)
+- [ ] Implement multi-class classification for specific attack types
+- [ ] Add real-time network traffic analysis
+- [ ] Deploy as a web application
+- [ ] Experiment with deep learning models (LSTM, CNN)
+
+## Learning Outcomes
+
+This project demonstrates:
+- Data preprocessing and feature engineering
+- Supervised machine learning with Random Forest
+- Model evaluation and performance metrics
+- Cybersecurity fundamentals in intrusion detection
+
+## License
+
+MIT License
+
+## Author
+
+Krish - [GitHub](https://github.com/VengenceKrish)
+```
+
+## Step 3: Create .gitignore
+
+Create a `.gitignore` file:
+```
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+env/
+
+# Data files (optional - if datasets are large)
+# Data/*.txt
+# Data/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
